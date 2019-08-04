@@ -1,0 +1,37 @@
+:host{
+    display: inline-block;
+    cursor: pointer;
+    overflow: hidden;
+    padding-top: 1px;
+    margin-top: -1px;
+    margin-left: 25px;
+}
+
+.tableContainer{
+    background-image: url("/assets/images/table.png");
+    height:209px;
+    width:321px;
+}
+
+ul{
+    list-style: none;
+}
+
+p{
+    position: absolute;
+}
+
+.playerSquare
+{
+    width:50px;
+    height:35px;
+    background: darkblue;
+    color:white;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 25px;
+    padding:10px;
+    font-size: 10px;
+    display: inline;
+    position: relative;
+}

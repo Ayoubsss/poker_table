@@ -1,0 +1,8 @@
+<div class="tableContainer" (click)="selectTable()">
+    {{tableName}} <br>
+    <ul>
+        <li *ngFor="let pokerplayer of playerListTableInput" class="playerSquare">
+            {{ pokerplayer.playerName }}
+        </li>
+    </ul>
+</div> 

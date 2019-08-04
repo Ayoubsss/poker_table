@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div id="container">
+  
+  <div class="row" id="innerContainer" style="height:500px;">
+    <div class="col-md-8" style="background:rgb(179, 179, 179); height:inherit;">
+        <app-pokertable *ngFor="let table of pokerTables" [tableName]="table.name" [tableId]="table.id" [playerListTableInput]="playerList"></app-pokertable>
+    </div>
+
+    <div class="col-md-4" style="background:rgb(219, 219, 219); height:inherit;">
+        <app-player-list [playerListInput]="playerList"></app-player-list>
+    </div>
+  </div>
+
+  <div class="row" id="footerContainer" style="margin-top:50px;">
+    <div class="col-md-12" >
+      <app-player-input></app-player-input>
+    </div>
+  </div>
+</div>
