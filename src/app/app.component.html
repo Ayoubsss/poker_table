@@ -7,13 +7,14 @@
     </div>
 
     <div class="col-md-4" style="background:rgb(219, 219, 219); height:inherit;">
-        <app-player-list [playerListInput]="playerList"></app-player-list>
+        <app-player-list [playerListInput]="playerList" (playerDeleteEvent)="deletePlayer($event)"></app-player-list>
     </div>
   </div>
 
   <div class="row" id="footerContainer" style="margin-top:50px;">
-    <div class="col-md-12" >
-      <app-player-input></app-player-input>
+    <div class="col-md-8" >
+      <app-player-input (addPlayerEvent)="addPlayer($event)"></app-player-input>
     </div>
+    <div class="col-md-4"><img src="/assets/images/social_club.png" style="position:relative;bottom:50px;width:426px;height:171px;float:right;" /></div>
   </div>
 </div>

@@ -1,7 +1,8 @@
 <ul class="playerList">
   <li *ngFor="let pokerplayer of playerListInput">
-    Table#{{pokerplayer.tableId}}<br>
+    PlayerID# {{pokerplayer.id}} - Table#{{pokerplayer.tableId}}<br>
     {{pokerplayer.playerName}} - $ {{pokerplayer.initialAmount}} 
+    <button class="playerlist__delete_btn" (click)="deletePlayer(pokerplayer)">Delete</button>
   </li>
 </ul>
 

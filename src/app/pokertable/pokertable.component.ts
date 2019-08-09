@@ -15,9 +15,14 @@ export class PokertableComponent  {
 
   constructor(private playersService: PlayersServiceService) {}
 
+  private anchors = [
+    [10, 15],
+    [20, 15],
+    [30, 15]
+  ];
+
   @Input() private tableId = 1;
-  
-  @Input() private tableName;
+  @Input() public tableName;
 
   @Input()
   set playerListTableInput(playerListTableInput: PokerPlayer[]) {

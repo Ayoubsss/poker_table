@@ -7,6 +7,8 @@ import { PlayerListComponent } from './player-list/player-list.component';
 import { PokertableComponent } from './pokertable/pokertable.component';
 import { PlayerInputComponent } from './player-input/player-input.component';
 
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,

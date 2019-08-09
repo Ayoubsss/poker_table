@@ -18,7 +18,7 @@ export class PlayersServiceService {
 
   addPokerPlayer(playerToAdd: PokerPlayer) {
     this.currentId += 1;
-    this.currentPlayer.next({id: this.currentId, playerName: playerToAdd.playerName, initialAmount: playerToAdd.initialAmount});
+    this.currentPlayer.next({ id: this.currentId, playerName: playerToAdd.playerName, initialAmount: playerToAdd.initialAmount});
   }
 
   setCurrentTable(selectedTable: number) {
@@ -29,7 +29,7 @@ export class PlayersServiceService {
     return this.currentTable.asObservable();
   }
 
-  getPlayer(): Observable<PokerPlayer> {
+  getCurrentPlayer(): Observable<PokerPlayer> {
     return this.currentPlayer.asObservable();
   }
 }

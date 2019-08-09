@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PokerPlayer } from '../models/pokerplayer';
 import { PlayersServiceService } from '../services/players-service.service';
 import { Subscription } from 'rxjs';
+import { EventEmitter } from '@angular/core';
+import { Output } from '@angular/core';
 
 
 @Component({
@@ -9,29 +11,28 @@ import { Subscription } from 'rxjs';
   templateUrl: './player-input.component.html',
   styleUrls: ['./player-input.component.scss']
 })
-export class PlayerInputComponent implements OnDestroy {
+export class PlayerInputComponent {
 
   playerInput: PokerPlayer;
-  private selectedTable: number;
+  public selectedTable: number;
 
   subscriptionSelectedTable: Subscription;
 
+  @Output() addPlayerEvent: EventEmitter<PokerPlayer>;
+
 
   constructor(private playersService: PlayersServiceService) {
+    this.addPlayerEvent = new EventEmitter<PokerPlayer>();
     this.playerInput = {playerName: '', initialAmount: 0};
 
     this.subscriptionSelectedTable = playersService.getSelectedTable().subscribe(currentTableId => {
         this.selectedTable = currentTableId;
       }
     );
-   }
-
- ngOnDestroy() {
-    this.subscriptionSelectedTable.unsubscribe();
   }
 
   addPlayerToList() {
-    this.playersService.addPokerPlayer(this.playerInput);
+    this.addPlayerEvent.emit(this.playerInput);
     this.playerInput = {playerName: '', initialAmount: 0};
   }
 
